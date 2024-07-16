@@ -19,6 +19,7 @@
 .bg-accent {
   background-color: var(--accent-color);
 }
+
 .bg-accent-hover {
   background-color: var(--accent-color-hover);
 }
@@ -307,5 +308,29 @@ section#banner {
 
 /* contact us section */
 #contact-us{
-  background-image: url('/assets/');
+  background-image: url('/assets/img/home/contact-us/contact-us-bg.webp');
+}
+#contact-us::before{
+  content: '';
+  background-color: black;
+  opacity: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+/* Hide the up and down arrows in number input fields */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+#contact-us .contact-form-button .submit-contact:hover{
+  background-color: var(--primary-color-hover);
 }
