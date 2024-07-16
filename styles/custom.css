@@ -28,7 +28,9 @@
 .text-primary {
   color: var(--primary-color);
 }
-
+.text-custom-gray {
+  color: var(--text-color-gray);
+}
 body {
   font-family: "Open Sans", sans-serif;
   color: var(--text-color-normal);
@@ -291,7 +293,19 @@ section#banner {
 }
 
 /* news css */
-#news .news-item {
-  height: 400px;
-  background-color: red;
+#news .news-container-inner .news-item-container .news-item-inner .news-img{
+  /* width: 100%;
+    height: 230px;
+    object-fit: cover; */
+}
+@media (max-width:475px) {
+  .news-container-inner .news-item-container .news-item-inner .news-img{
+    height: 260px;
+  }
+}
+
+
+/* contact us section */
+#contact-us{
+  background-image: url('/assets/');
 }
