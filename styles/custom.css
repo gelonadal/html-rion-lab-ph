@@ -242,7 +242,7 @@ section#banner {
 
 /* for Frequently Asked Question */
 #frequently-asked-question .faqs-left .left-image-container {
-  background-image: url(assets/img/home/faqs/frequently-asked-question.png);
+  background-image: url('assets/img/home/faqs/frequently-asked-question.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
