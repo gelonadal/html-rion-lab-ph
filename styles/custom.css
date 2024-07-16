@@ -160,7 +160,7 @@ section#banner {
 #featured-services
   .featured-services-item-container:nth-child(2)
   .featured-services-item {
-  background-image: url('..assets/img/home/services-section/software-development.png');
+  background-image: url('../assets/img/home/services-section/software-development.png');
 }
 
 /* Second featured-services-item */
