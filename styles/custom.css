@@ -80,7 +80,7 @@ section#banner {
 }
 
 #banner .custom-banner {
-  background-image: url("/assets/img/home/banner-image-1.jpg");
+  background-image: url("assets/img/home/banner-image-1.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -158,21 +158,21 @@ section#banner {
 #featured-services
   .featured-services-item-container:nth-child(2)
   .featured-services-item {
-  background-image: url("/assets/img/home/services-section/software-development.png");
+  background-image: url("assets/img/home/services-section/software-development.png");
 }
 
 /* Second featured-services-item */
 #featured-services
   .featured-services-item-container:nth-child(3)
   .featured-services-item {
-  background-image: url("/assets/img/home/services-section/IT-advisory.png");
+  background-image: url("assets/img/home/services-section/IT-advisory.png");
 }
 
 /* Third featured-services-item */
 #featured-services
   .featured-services-item-container:nth-child(4)
   .featured-services-item {
-  background-image: url("/assets/img/home/services-section/dx-training.png");
+  background-image: url("assets/img/home/services-section/dx-training.png");
 }
 
 /* Ensure the container has position relative */
@@ -242,7 +242,7 @@ section#banner {
 
 /* for Frequently Asked Question */
 #frequently-asked-question .faqs-left .left-image-container {
-  background-image: url(/assets/img/home/faqs/frequently-asked-question.png);
+  background-image: url(assets/img/home/faqs/frequently-asked-question.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -308,7 +308,7 @@ section#banner {
 
 /* contact us section */
 #contact-us{
-  background-image: url('/assets/img/home/contact-us/contact-us-bg.webp');
+  background-image: url('assets/img/home/contact-us/contact-us-bg.webp');
 }
 #contact-us::before{
   content: '';
