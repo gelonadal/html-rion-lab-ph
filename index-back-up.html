@@ -1,0 +1,876 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rion Lab PH</title>
+    <meta
+      name="description"
+      content='Rion Lab PH is not only a system development company, but also a "generalist" group that is not an IT specialist, but is well versed in all aspects of IT, and can lead the entire project based on our accumulated knowledge and know-how. We aim to be a group of "generalists" who are familiar with all aspects of IT, not just IT specialists.​'
+    />
+    <link
+      rel="icon"
+      href="/assets/favicons/rionlab-ph-favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="/assets/favicons/rionlab-ph-favicon-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="/assets/favicons/rionlab-ph-favicon-192x192.png"
+    />
+
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles/custom.css" />
+  </head>
+  <body class="bg-gray-100 p-0 m-0 leading-relaxed font-normal">
+    <!-- Your HTML content -->
+    <header
+      id="header"
+      class="fixed inset-x-0 top-0 z-50 bg-white flex items-center"
+      style="height: 80px; box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%)"
+    >
+      <nav
+        class="container mx-auto main-nav flex items-center justify-between py-0 px-3 lg:px-12"
+        aria-label="Global"
+      >
+        <div class="flex">
+          <a
+            class="-m-1.5 p-1.5 flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+            ><img
+              class="logo-header"
+              src="/assets/img/rionlab_ph_logo.png"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button
+            @click="toggleMobileMenu"
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:justify-end nav-link-container">
+          <div class="hidden items-center mr-20 lg:flex lg:gap-x-12">
+            <a href="#" class="active main-nav-link text-sm leading-6">Home</a>
+            <a href="#" class="main-nav-link text-sm leading-6">About Us</a>
+            <a href="#" class="main-nav-link text-sm leading-6">Our Team</a>
+            <a href="#" class="main-nav-link text-sm leading-6">Services</a>
+            <a href="#" class="main-nav-link text-sm leading-6">FAQs</a>
+            <a href="#" class="main-nav-link text-sm leading-6">News</a>
+          </div>
+
+          <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a> -->
+        </div>
+        <div class="hidden lg:flex lg:justify-end items-center">
+          <button class="cta-header bg-primary">Contact Us</button>
+          <a class="m-4 cta-header-icon" href=""
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></a>
+          <!-- <button
+            class="sm:w-full lg:w-auto my-2 border rounded-full drop-shadow md py-4 px-8 text-center bg-cyan-600 text-gray-800 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-700 focus:ring-opacity-50"
+          >
+            Inquire
+          </button> -->
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div
+        class="bg-cyan-600 text-white w-full h-[100vh] space-y-6 py-7 px-5 absolute inset-y-0 left-0 transform transition duration-300 ease-in-out -translate-x-full"
+        :class="{'-translate-x-full': !isMobileMenuOpen}"
+      >
+        <div>
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <h2 class="text-xl">Your Logo</h2>
+            </a>
+            <button
+              @click="toggleMobileMenu"
+              type="button"
+              class="-m-2.5 rounded-md p-2.5 text-white"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-300">
+              <div class="space-y-2 py-6">
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white-900 hover:bg-gray-50"
+                  >Product</a
+                >
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white-900 hover:bg-gray-50"
+                  >Features</a
+                >
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white-900 hover:bg-gray-50"
+                  >Marketplace</a
+                >
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white-900 hover:bg-gray-50"
+                  >Company</a
+                >
+              </div>
+              <div class="py-6">
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base leading-7 text-white-900 hover:bg-gray-50"
+                  >Log in</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="banner">
+        <div class="custom-banner relative h-auto sm:h-[90vh]">
+          <div
+            class="container mx-auto custom-banner-inner grid grid-cols-12 h-auto sm:h-[90vh] relative z-20 py-10 xl:pt-0"
+          >
+            <div
+              class="flex flex-col col-span-12 justify-center items-center px-12"
+            >
+              <div class="subheading-container mb-4 text-center">
+                <p
+                  class="subheading w-auto uppercase text-white font-semibold text-base"
+                >
+                  // WE PROVIDE HIGH QUALITY SERVICES
+                </p>
+              </div>
+              <h1
+                class="text-center text-4xl lg:text-5xl xl:text-6xl font-bold text-white mt-0 mb-4"
+              >
+                Welcome to Rion Lab PH
+              </h1>
+              <p class="text-center text-white mb-5">
+                We are a generalist group with comprehensive IT knowledge,
+                capable of leading entire projects based on our extensive
+                experience and expertise.
+              </p>
+              <button
+                class="cta-banner w-[140px] h-[50px] bg-accent text-white rounded-md py-4 px-4 shadow-lg hover:ml-3"
+              >
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="home-about-us" class="pb-[70px] bg-white">
+        <div class="about-us-container">
+          <div
+            class="container about-us-container-inner mx-auto grid grid-cols-12 h-auto px-3 lg:px-12"
+          >
+            <div
+              class="left flex flex-col col-span-12 lg:col-span-7 justify-start pr-5"
+            >
+              <div>
+                <p class="text-primary font-bold uppercase">// ABOUT US</p>
+                <h2 class="mb-2.5 text-3xl font-bold">
+                  We are a group of expert IT generalists​
+                </h2>
+                <p>
+                  We are not only a system development company, but also a
+                  "generalist" group that is not an IT specialist, but is well
+                  versed in all aspects of IT, and can lead the entire project
+                  based on our accumulated knowledge and know-how. We aim to be
+                  a group of "generalists" who are familiar with all aspects of
+                  IT, not just IT specialists.​
+                </p>
+              </div>
+              <div class="left-bottom grid grid-cols-12 mt-8">
+                <div
+                  class="flex flex-col col-span-12 sm:col-span-6 justify-center mr-0 sm:mr-[20px]"
+                >
+                  <i class="fa-solid fa-gears text-primary mb-2.5"></i>
+                  <h3 class="text-xl font-semibold">Experienced</h3>
+                  <hr class="divider" />
+                  <p>
+                    With extensive industry experience, we demonstrate our
+                    ability to deliver reliable and effective technology
+                    solutions.
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col col-span-12 sm:col-span-6 justify-center ml-0 sm:ml-[20px]"
+                >
+                  <i class="fa-solid fa-lightbulb text-primary mb-2.5"></i>
+                  <h3 class="text-xl font-semibold">Innovative</h3>
+                  <hr class="divider" />
+                  <p>
+                    Demonstrates a dedication to developing innovative
+                    technologies and continually creating cutting-edge
+                    solutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col col-span-12 lg:col-span-5 justify-start pl-5 mt-10 lg:mt-0"
+            >
+              <img
+                class="w-full h-auto"
+                src="/assets/img/home/content-img1.png"
+                alt="Rion Lab PH - Team"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="our-clients" class="pb-[70px] bg-white">
+        <div class="our-clients-container">
+          <div
+            class="our-clients-container-inner bg-white container grid grid-cols-12 mx-auto px-3"
+          >
+            <div
+              class="flex flex-col col-span-12 lg:col-span-3 justify-start pl-5 mt-10 lg:mt-0"
+            >
+              <p class="text-primary font-bold uppercase">
+                // Who We Work With
+              </p>
+              <h2 class="mb-2.5 text-3xl font-bold">
+                Some Of Our Valued Clients
+              </h2>
+              <p class="mb-2.5">
+                We are proud to offer our services to many companies. Here are
+                some of the esteemed clients who trust us with their IT needs.
+              </p>
+              <a
+                style="transition: 0.3s"
+                class="text-blue-500 font-semibold hover:text-blue-700 hover:ml-3"
+                href=""
+                >See All <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+            <div
+              class="flex flex-col col-span-12 lg:col-span-9 justify-start pl-5 mt-10 lg:mt-0"
+            >
+              <div
+                class="clients-image-container flex flex-wrap justify-center items-center"
+              >
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-1.png"
+                    alt="client-logo-1"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-2.png"
+                    alt="client-logo-2"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-3.png"
+                    alt="client-logo-3"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-4.png"
+                    alt="client-logo-4"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-5.png"
+                    alt="client-logo-5"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-6.png"
+                    alt="client-logo-6"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-7.png"
+                    alt="client-logo-7"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-8.png"
+                    alt="client-logo-8"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-9.png"
+                    alt="client-logo-9"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-10.png"
+                    alt="client-logo-10"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-11.png"
+                    alt="client-logo-11"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-12.png"
+                    alt="client-logo-12"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-13.png"
+                    alt="client-logo-13"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-14.png"
+                    alt="client-logo-14"
+                  />
+                </div>
+                <div class="clients-image-item">
+                  <img
+                    src="/assets/img/home/clients-logo/logo-15.png"
+                    alt="client-logo-15"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="featured-services" class="pb-[70px] bg-gray-100">
+        <div class="featured-services-container">
+          <div
+            class="featured-services-container-inner bg-gray-100 container grid grid-cols-12 mx-auto px-3 lg:px-12"
+          >
+            <div
+              class="flex flex-col col-span-12 items-center justify-center mb-5"
+            >
+              <p class="text-primary font-bold uppercase">// Our Expertise</p>
+              <h2 class="mb-2.5 text-3xl font-bold">Featured Services</h2>
+              <p class="mb-2.5">
+                Here are the main services offered by Rion Lab PH
+              </p>
+            </div>
+            <div
+              class="featured-services-item-container flex flex-col col-span-12 lg:col-span-4 items-center justify-center lg:mr-3 mb-5 lg:mb-0"
+            >
+              <div
+                class="featured-services-item rounded-md flex flex-row justify-center items-center"
+              >
+                <a href="">
+                  <div class="main-text-container z-20 text-center px-5">
+                    <h3 class="title text-white text-xl font-semibold">
+                      Software Development
+                    </h3>
+                    <div class="hidden-description">
+                      <p class="text-white mt-2">
+                        A wide range of development is possible, from web
+                        applications, applications, and missioncritical systems.
+                        From planning to development, we handle total
+                        development from upstream to downstream only. We can
+                        also handle the creation of CS mechanisms after launch.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              class="featured-services-item-container flex flex-col col-span-12 lg:col-span-4 items-center justify-center lg:ml-3 lg:mr-3 mb-5 lg:mb-0"
+            >
+              <div
+                class="featured-services-item rounded-md flex flex-row justify-center items-center"
+              >
+                <a href="">
+                  <div class="main-text-container z-20 text-center px-5">
+                    <h3 class="title text-white text-xl font-semibold">
+                      IT Advisor
+                    </h3>
+                    <div class="hidden-description">
+                      <p class="text-white mt-2">
+                        A wide range of development is possible, from web
+                        applications, applications, and missioncritical systems.
+                        From planning to development, we handle total
+                        development from upstream to downstream only. We can
+                        also handle the creation of CS mechanisms after launch.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div
+              class="featured-services-item-container flex flex-col col-span-12 lg:col-span-4 items-center justify-center lg:ml-3"
+            >
+              <div
+                class="featured-services-item rounded-md flex flex-row justify-center items-center"
+              >
+                <a href="">
+                  <div class="main-text-container z-20 text-center px-5">
+                    <h3 class="title text-white text-xl font-semibold">
+                      DX Training
+                    </h3>
+                    <div class="hidden-description">
+                      <p class="text-white mt-2">
+                        Training programs are available to improve corporate IT
+                        literacy. Training is available from a wide range of
+                        specialist instructors, from basic IT literacy courses
+                        to training for engineers, training for internal DX, and
+                        training for specialized knowledge.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="meet-our-team" class="bg-white">
+        <div class="meet-our-team-container">
+          <div
+            class="meet-our-team-container-inner bg-white container grid grid-cols-12 mx-auto px-3"
+          >
+            <!-- heading and description of meet the team -->
+            <div
+              class="flex flex-col col-span-12 lg:col-span-3 justify-start pl-5 mt-10 lg:mt-0"
+            >
+              <p class="text-primary font-bold uppercase">// The Experts</p>
+              <h2 class="mb-2.5 text-3xl font-bold">Meet Our Team</h2>
+              <p class="mb-2.5">
+                Our team comprises versatile generalists with extensive IT
+                knowledge and project leadership skills, ready to guide every
+                aspect of your project with our comprehensive expertise.
+              </p>
+              <a
+                style="transition: 0.3s"
+                class="text-blue-500 font-semibold hover:text-blue-700 hover:ml-3"
+                href=""
+                >See All <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+            <!-- container of the carousel of meet the team -->
+            <div
+              class="flex flex-col col-span-12 lg:col-span-9 justify-start pl-5 mt-10 lg:mt-0"
+            >
+              <div class="carousel-container">
+                <div class="carousel-wrapper">
+                  <!-- Carousel Items -->
+                  <div class="carousel-item p-3">
+                    <div class="bg-white flex flex-col items-center">
+                      <img
+                        src="/assets/img/home/meet-the-team/sample-team-image.png"
+                        alt="Yugen Kobayashi - CEO"
+                        class="meet-our-team-image rounded-md mb-4 h-[300px]"
+                      />
+                      <h3 class="text-xl font-semibold">Yugen Kobayashi</h3>
+                      <p class="text-gray-500">CEO</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="bg-white flex flex-col items-center">
+                      <img
+                        src="/assets/img/home/meet-the-team/sample-team-image.png"
+                        alt="Takuya Umetsu - CMO"
+                        class="meet-our-team-image rounded-md mb-4 h-[300px]"
+                      />
+                      <h3 class="text-xl font-semibold">Takuya Umetsu</h3>
+                      <p class="text-gray-500">CMO</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="bg-white flex flex-col items-center">
+                      <img
+                        src="/assets/img/home/meet-the-team/sample-team-image.png"
+                        alt="Kohei Takami - COO"
+                        class="meet-our-team-image rounded-md mb-4 h-[300px]"
+                      />
+                      <h3 class="text-xl font-semibold">Kohei Takami</h3>
+                      <p class="text-gray-500">COO</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="bg-white flex flex-col items-center">
+                      <img
+                        src="/assets/img/home/meet-the-team/sample-team-image.png"
+                        alt="John Smith - IT Advisor"
+                        class="meet-our-team-image rounded-md mb-4 h-[300px]"
+                      />
+                      <h3 class="text-xl font-semibold">John Smith</h3>
+                      <p class="text-gray-500">IT Advisor</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="bg-white flex flex-col items-center">
+                      <img
+                        src="/assets/img/home/meet-the-team/sample-team-image.png"
+                        alt="Bob Johnson - DX Trainer"
+                        class="meet-our-team-image rounded-md mb-4 h-[300px]"
+                      />
+                      <h3 class="text-xl font-semibold">Bob Johnson</h3>
+                      <p class="text-gray-500">DX Trainer</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="bg-white flex flex-col items-center">
+                      <img
+                        src="/assets/img/home/meet-the-team/sample-team-image.png"
+                        alt="Barry Allen - Project Manager"
+                        class="meet-our-team-image rounded-md mb-4 h-[300px]"
+                      />
+                      <h3 class="text-xl font-semibold">Barry Allen</h3>
+                      <p class="text-gray-500">Project Manager</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="bg-white flex flex-col items-center">
+                      <img
+                        src="/assets/img/home/meet-the-team/sample-team-image.png"
+                        alt="Charlie Davis - UX/UI Designer"
+                        class="meet-our-team-image rounded-md mb-4 h-[300px]"
+                      />
+                      <h3 class="text-xl font-semibold">Charlie Davis</h3>
+                      <p class="text-gray-500">UX/UI Designer</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item p-3">
+                    <div class="bg-white flex flex-col items-center">
+                      <img
+                        src="/assets/img/home/meet-the-team/sample-team-image.png"
+                        alt="John Wilson - QA Engineer"
+                        class="meet-our-team-image rounded-md mb-4 h-[300px]"
+                      />
+                      <h3 class="text-xl font-semibold">John Wilson</h3>
+                      <p class="text-gray-500">QA Engineer</p>
+                    </div>
+                  </div>
+                  <!-- Cloned Items for Infinite Loop -->
+                  <!-- <div class="carousel-item p-3">
+                  <div class="bg-white rounded-md flex flex-col items-center p-5">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Team Member"
+                      class="rounded-full mb-4"
+                    />
+                    <h3 class="text-xl font-semibold">John Doe</h3>
+                    <p class="text-gray-500">Software Developer</p>
+                  </div>
+                </div>
+                <div class="carousel-item p-3">
+                  <div class="bg-white rounded-md flex flex-col items-center p-5">
+                    <img
+                      src="https://via.placeholder.com/150"
+                      alt="Team Member"
+                      class="rounded-full mb-4"
+                    />
+                    <h3 class="text-xl font-semibold">Jane Smith</h3>
+                    <p class="text-gray-500">IT Advisor</p>
+                  </div>
+                </div> -->
+                </div>
+                <button
+                  class="prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-500 text-white py-2 px-3 rounded-md"
+                >
+                  &lt;
+                </button>
+                <button
+                  class="next absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-500 text-white py-2 px-3 rounded-md"
+                >
+                  &gt;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="frequently-asked-question" class="pb-[70px] bg-gray-100">
+        <div class="frequently-asked-question-container">
+          <div
+            class="frequently-asked-question-inner bg-white container grid grid-cols-12 mx-auto px-3"
+          >
+            <!-- heading and description of frequently-asked-question -->
+            <div class="flex flex-col col-span-12 justify-center items-center">
+              <p class="text-primary font-bold uppercase">// Find Answers</p>
+              <h2 class="mb-2.5 text-3xl font-bold">
+                Frequently Asked Questions
+              </h2>
+              <p class="mb-2.5">Get the information you need with our FAQs</p>
+            </div>
+            <!-- end heading and description of frequently-asked-question -->
+            <div class="flex flex-col col-span-12 rounded-md">
+              <div class="container grid grid-cols-12 mx-auto">
+                <div
+                  class="relative faqs-left flex flex-col col-span-4 items-center justify-center h-[550px] rounded-md mr-3"
+                >
+                  <img
+                    class="dots-top"
+                    src="/assets/img/home/faqs/dots-top.png"
+                    alt="dots"
+                  />
+                  <img
+                    class="dots-bottom"
+                    src="/assets/img/home/faqs/dots-bottom.png"
+                    alt="dots"
+                  />
+                  <div
+                    class="left-image-container flex flex-col items-center justify-center"
+                  >
+                    <a
+                      style="transition: 0.3s"
+                      class="cta-faqs-1 z-10 bg-secondary text-white rounded-md text-sm font-semibold py-4 px-5 shadow-lg hover:ml-3"
+                      href=""
+                      >Ask New Question
+                    </a>
+
+                    <p class="my-5 z-10 font-semibold text-white">or</p>
+                    <a
+                      style="transition: 0.3s"
+                      class="cta-faqs-2 z-10 bg-primary text-white rounded-md text-sm font-semibold py-4 px-5 shadow-lg hover:ml-3"
+                      href=""
+                      >View All Questions
+                    </a>
+                  </div>
+                </div>
+
+                <!-- accordion container -->
+                <div
+                  class="faqs-right flex flex-col col-span-8 h-[550px] rounded-md ml-3"
+                >
+                  <div id="accordion-faqs">
+                    <h2 id="accordion-color-heading-1" class="py-5">
+                      <button
+                        type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 rounded-xl focus:ring-4 focus:ring-blue-200 hover:bg-blue-100 gap-3"
+                        data-accordion-target="#accordion-color-body-1"
+                        aria-expanded="true"
+                        aria-controls="accordion-color-body-1"
+                      >
+                        <span>What is Flowbite?</span>
+                        <svg
+                          data-accordion-icon
+                          class="w-3 h-3 rotate-180 shrink-0"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 10 6"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 5 5 1 1 5"
+                          />
+                        </svg>
+                      </button>
+                    </h2>
+                    <div
+                      id="accordion-color-body-1"
+                      class=""
+                      aria-labelledby="accordion-color-heading-1"
+                    >
+                      <div class="mb-5 px-5">
+                        <p class="mb-2 text-gray-500">
+                          Flowbite is an open-source library of interactive
+                          components built on top of Tailwind CSS including
+                          buttons, dropdowns, modals, navbars, and more.
+                        </p>
+                        <p class="text-gray-500">
+                          Check out this guide to learn how to
+                          <a
+                            href="/docs/getting-started/introduction/"
+                            class="text-blue-600 hover:underline"
+                            >get started</a
+                          >
+                          and start developing websites even faster with
+                          components on top of Tailwind CSS.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end of accordion container -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-primary text-white">
+      <div
+        class="container px-5 py-12 mx-auto flex flex-col xl:flex-row justify-between items-center xl:items-start px-3 lg:px-12"
+      >
+        <div
+          class="footer-left flex flex-col w-full xl:max-w-xs items-center xl:items-start mb-5 xl:mb-0"
+        >
+          <a
+            class="-m-1.5 p-1.5 flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+            href="/"
+            ><img
+              class="logo-header w-[250px] h-auto"
+              src="/assets/img/white-logo-rionlabph.png"
+              alt=""
+            />
+          </a>
+          <p class="mt-3 text-center xl:text-start">
+            We are a versatile team of IT generalists, well-versed in all
+            aspects of IT, capable of leading entire projects with our extensive
+            knowledge and expertise.
+          </p>
+        </div>
+        <div
+          class="footer-mid flex flex-col items-center xl:items-start w-full xl:w-[130px] mb-5 xl:mb-0"
+        >
+          <p class="text-lg font-semibold mb-2">Useful Links</p>
+          <div class="flex flex-col sm:flex-row xl:flex-col">
+            <a
+              style="transition: 0.3s"
+              class="cursor-pointer hover:font-semibold hover:ml-2 mb-1 mr-0 sm:mr-8 xl:mr-0"
+              href=""
+              ><i class="fa-solid fa-caret-right mr-2"></i>About Us</a
+            >
+            <a
+              style="transition: 0.3s"
+              class="cursor-pointer hover:font-semibold hover:ml-2 mb-1 mr-0 sm:mr-8 xl:mr-0"
+              href=""
+              ><i class="fa-solid fa-caret-right mr-2"></i>Our Services</a
+            >
+            <a
+              style="transition: 0.3s"
+              class="cursor-pointer hover:font-semibold hover:ml-2 mb-1 mr-0 sm:mr-8 xl:mr-0"
+              href=""
+              ><i class="fa-solid fa-caret-right mr-2"></i>Sitemap</a
+            >
+            <a
+              style="transition: 0.3s"
+              class="cursor-pointer hover:font-semibold hover:ml-2 mb-1"
+              href=""
+              ><i class="fa-solid fa-caret-right mr-2"></i>Privacy Policy</a
+            >
+          </div>
+          <!-- <ul class="">
+            <li class="mb-2">
+              <a
+                style="transition: 0.3s"
+                class="cursor-pointer hover:font-semibold hover:ml-2"
+                href=""
+                ><i class="fa-solid fa-caret-right mr-2"></i>About Us</a
+              >
+            </li>
+          </ul> -->
+        </div>
+        <div class="footer-right flex flex-col w-full xl:max-w-md mb-3 xl:mb-0">
+          <p class="text-lg font-semibold">Newsletter</p>
+          <p>
+            Stay updated with the latest news, insights, and innovations from
+            Rion Lab PH. Subscribe to our newsletter today!
+          </p>
+          <form action="">
+            <div class="flex flex-row mt-3">
+              <input
+                style="
+                  border-top-left-radius: 5px;
+                  border-bottom-left-radius: 5px;
+                "
+                type="email"
+                placeholder="Enter your email address"
+                class="w-full h-[40px] px-4 text-gray-900"
+              />
+              <button
+                style="
+                  border-top-right-radius: 5px;
+                  border-bottom-right-radius: 5px;
+                "
+                class="h-[40px] px-5 bg-accent"
+              >
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="bg-gray-700 px-3 lg:px-12">
+        <div
+          class="container mx-auto py-4 px-6 flex flex-col sm:flex-row justify-between"
+        >
+          <p class="text-white text-sm text-center sm:text-left">
+            © 2024 <span class="font-semibold">Rion Lab PH</span>. All Rights
+            Reserved.
+          </p>
+          <p class="text-white text-sm text-center mt-3 sm:mt-0">
+            Powered and Developed by
+            <span class="font-semibold">Rion Lab PH</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

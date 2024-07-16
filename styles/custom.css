@@ -1,0 +1,297 @@
+:root {
+  --primary-color: #3f2d82;
+  --primary-color-hover: #3a297b;
+  --secondary-color: #9158a0;
+  --secondary-color-hover: #844f91;
+  --accent-color: #f2911b;
+  --accent-color-hover: #dd8419;
+  --text-color-normal: #5c5c5c;
+  --text-color-gray: #767676;
+  --color-white: #fff;
+  --color-black: #000;
+}
+.bg-primary {
+  background-color: var(--primary-color);
+}
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+.bg-accent {
+  background-color: var(--accent-color);
+}
+.bg-accent-hover {
+  background-color: var(--accent-color-hover);
+}
+.bg-secondary-light {
+  background-color: #f8deff;
+}
+.text-primary {
+  color: var(--primary-color);
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color-normal);
+}
+h1,
+h2,
+h3 {
+  color: var(--text-color-normal);
+  /* font-weight: 700; */
+}
+
+section {
+  padding-top: 70px;
+}
+
+#header .logo-header {
+  width: 230px;
+}
+#header .nav-link-container a.main-nav-link {
+  color: var(--text-color-normal);
+}
+#header .nav-link-container a.main-nav-link:hover {
+  color: var(--primary-color);
+}
+#header .nav-link-container a.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+#header .cta-header {
+  height: 50px;
+  color: white;
+  padding: 0 20px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+#header .cta-header:hover {
+  background-color: var(--primary-color-hover) !important;
+}
+#header .cta-header-icon {
+  font-size: 20px;
+}
+
+/* for banner */
+section#banner {
+  padding-top: 80px;
+}
+
+#banner .custom-banner {
+  background-image: url("/assets/img/home/banner-image-1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#banner .custom-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--color-black);
+  opacity: 60%;
+}
+#banner .cta-banner {
+  transition: 0.3s;
+}
+#banner .cta-banner:hover {
+  background-color: var(--accent-color-hover);
+}
+
+/* for company introduction */
+
+#home-about-us .left .left-bottom .divider {
+  width: 100%;
+  height: 5px;
+  /* background: linear-gradient(to right, #40b4ac, #70d5c9, #9ae6e0); */
+  background: linear-gradient(to right, #9158a0, #a873b3, #c58ec6);
+
+  border: none;
+  margin: 15px 0;
+  opacity: 0.6;
+}
+#home-about-us .left .left-bottom .fa-solid {
+  font-size: 70px;
+}
+#our-clients .clients-image-container {
+}
+#our-clients .clients-image-item {
+  height: 100px;
+  width: 125px;
+  margin: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+  filter: grayscale(1);
+  opacity: 85%;
+}
+#our-clients .clients-image-item:hover {
+  filter: unset;
+  opacity: 100%;
+  /* height: 110px; */
+  width: 150px;
+}
+
+/* For Featured Services */
+#featured-services .featured-services-item {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#featured-services .featured-services-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #2c2058;
+  opacity: 75%;
+  border-radius: 5px;
+}
+/* First featured-services-item */
+#featured-services
+  .featured-services-item-container:nth-child(2)
+  .featured-services-item {
+  background-image: url("/assets/img/home/services-section/software-development.png");
+}
+
+/* Second featured-services-item */
+#featured-services
+  .featured-services-item-container:nth-child(3)
+  .featured-services-item {
+  background-image: url("/assets/img/home/services-section/IT-advisory.png");
+}
+
+/* Third featured-services-item */
+#featured-services
+  .featured-services-item-container:nth-child(4)
+  .featured-services-item {
+  background-image: url("/assets/img/home/services-section/dx-training.png");
+}
+
+/* Ensure the container has position relative */
+#featured-services .featured-services-item .main-text-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Adjust as needed */
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Initial state: hidden description */
+#featured-services
+  .featured-services-item
+  .main-text-container
+  .hidden-description {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 1s ease, visibility 1s ease, height 1s ease;
+}
+
+/* Hover state: show description with fade effect */
+#featured-services
+  .featured-services-item:hover
+  .main-text-container
+  .hidden-description {
+  opacity: 1;
+  visibility: visible;
+  height: auto; /* Let it expand to its full height */
+}
+
+/* Meet the team css */
+#meet-our-team .carousel-container .meet-our-team-image {
+  object-fit: cover;
+}
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .carousel-item {
+    min-width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-item {
+    min-width: 33.33%;
+  }
+}
+
+/* for Frequently Asked Question */
+#frequently-asked-question .faqs-left .left-image-container {
+  background-image: url(/assets/img/home/faqs/frequently-asked-question.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  width: 300px;
+  border-radius: 5px;
+  z-index: 2;
+  position: relative;
+}
+#frequently-asked-question .faqs-left .left-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 75%;
+  border-radius: 5px;
+}
+#frequently-asked-question .collapse-arrow > .collapse-title:after {
+  margin-top: 8px !important;
+}
+#frequently-asked-question .faqs-left {
+}
+#frequently-asked-question .faqs-left .dots-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+#frequently-asked-question .faqs-left .dots-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+@media (max-width: 1024px) {
+  #frequently-asked-question .faqs-left {
+    grid-row: 2;
+    height: 470px;
+  }
+
+  #frequently-asked-question .faqs-left .left-image-container {
+    height: 400px;
+    width: 85%;
+    background-position: top;
+  }
+}
+
+/* news css */
+#news .news-item {
+  height: 400px;
+  background-color: red;
+}
