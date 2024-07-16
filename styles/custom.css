@@ -80,7 +80,9 @@ section#banner {
 }
 
 #banner .custom-banner {
-  background-image: url("assets/img/home/banner-image-1.jpg");
+  /* background-image: url("../assets/img/home/banner-image-1.jpg"); */
+  background-image: url('../assets/img/home/banner-image-1.jpg');
+  /* background-image: url("/assets/img/home/banner-image-1.jpg"); */
   background-position: center;
   background-size: cover;
 }
